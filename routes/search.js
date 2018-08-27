@@ -3,7 +3,7 @@ var router = express.Router();
 var axios = require('axios');
 
 //-------------------------------------------------TO BE DELETED---------------------------------------------------------------
-var apiKey = "AIzaSyCqeWr16WjcdM69n0VSycM4yHS8tuEKxo0";
+var apiKey = "YOUR KEY";
 //-----------------------------------------------------------------------------------------------------------------------------
 
 // render the search page
