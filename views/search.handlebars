@@ -1,29 +1,135 @@
 <div class="jumbotron">
     <h3 class="page-header">Search Options</h3>
-    {{#if errors}}
-        <div class="alert alert-danger">
-            <p>
-                Please give atleast one field. 
-            </p>
-        </div>
-    {{/if}}
     <form method="post" action="/search">
-        <div class="form-group">
-            <label>Street</label>
-            <input type="text" class="form-control" placeholder="Street Address" name="street">
+
+        <div class="business-type">
+            <div class="row">
+                <div>
+                    <label class="input-group-text col-md-3" for="inputGroupSelect01">Business Type:</label>
+                    <select class="custom-select col-md-6" id="inputGroupSelect01" name="businesstype">
+                        <option selected>Choose...</option>
+                        <option value="accounting">Accounting</option>
+                        <option value="airport">Airport</option>
+                        <option value="amusement_park">Amusement_park</option>
+                        <option value="aquarium">Aquarium</option>
+                        <option value="art_gallery">Art_gallery</option>
+                        <option value="atm">Atm</option>
+                        <option value="bakery">Bakery</option>
+                        <option value="bank">Bank</option>
+                        <option value="bar">Bar</option>
+                        <option value="beauty_salon">Beauty_salon</option>
+                        <option value="bicycle_store">Bicycle_store</option>
+                        <option value="book_store">Book_store</option>
+                        <option value="bowling_alley">Bowling_alley</option>
+                        <option value="bus_station">Bus_station</option>
+                        <option value="cafe">Cafe</option>
+                        <option value="campground">Campground</option>
+                        <option value="car_dealer">Car_dealer</option>
+                        <option value="car_rental">Car_rental</option>
+                        <option value="car_repair">Car_repair</option>
+                        <option value="car_wash">Car_wash</option>
+                        <option value="casino">Casino</option>
+                        <option value="cemetery">Cemetery</option>
+                        <option value="church">Church</option>
+                        <option value="city_hall">City_hall</option>
+                        <option value="clothing_store">Clothing_store</option>
+                        <option value="convenience_store">Convenience_store</option>
+                        <option value="courthouse">Courthouse</option>
+                        <option value="dentist">Dentist</option>
+                        <option value="department_store">Department_store</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="electrician">Electrician</option>
+                        <option value="electronics_store">Electronics_store</option>
+                        <option value="embassy">Embassy</option>
+                        <option value="fire_station">Fire_station</option>
+                        <option value="florist">Florist</option>
+                        <option value="funeral_home">Funeral_home</option>
+                        <option value="furniture_store">Furniture_store</option>
+                        <option value="gas_station">Gas_station</option>
+                        <option value="gym">Gym</option>
+                        <option value="hair_care">Hair_care</option>
+                        <option value="hardware_store">Hardware_store</option>
+                        <option value="hindu_temple">Hindu_temple</option>
+                        <option value="home_goods_store">Home_goods_store</option>
+                        <option value="hospital">Hospital</option>
+                        <option value="insurance_agency">Insurance_agency</option>
+                        <option value="jewelry_store">Jewelry_store</option>
+                        <option value="laundry">Laundry</option>
+                        <option value="lawyer">Lawyer</option>
+                        <option value="library">Library</option>
+                        <option value="liquor_store">Liquor_store</option>
+                        <option value="local_government_office">Local_government_office</option>
+                        <option value="locksmith">Locksmith</option>
+                        <option value="lodging">Lodging</option>
+                        <option value="meal_delivery">Meal_delivery</option>
+                        <option value="meal_takeaway">Meal_takeaway</option>
+                        <option value="mosque">Mosque</option>
+                        <option value="movie_rental">Movie_rental</option>
+                        <option value="movie_theater">Movie_theater</option>
+                        <option value="moving_company">Moving_company</option>
+                        <option value="museum">Museum</option>
+                        <option value="night_club">Night_club</option>
+                        <option value="painter">Painter</option>
+                        <option value="park">Park</option>
+                        <option value="parking">Parking</option>
+                        <option value="pet_store">Pet_store</option>
+                        <option value="pharmacy">Pharmacy</option>
+                        <option value="physiotherapist">Physiotherapist</option>
+                        <option value="plumber">Plumber</option>
+                        <option value="police">Police</option>
+                        <option value="post_office">Post_office</option>
+                        <option value="real_estate_agency">Real_estate_agency</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="roofing_contractor">Roofing_contractor</option>
+                        <option value="rv_park">Rv_park</option>
+                        <option value="school">School</option>
+                        <option value="shoe_store">Shoe_store</option>
+                        <option value="shopping_mall">Shopping_mall</option>
+                        <option value="spa">Spa</option>
+                        <option value="stadium">Stadium</option>
+                        <option value="storage">Storage</option>
+                        <option value="store">Store</option>
+                        <option value="subway_station">Subway_station</option>
+                        <option value="supermarket">Supermarket</option>
+                        <option value="synagogue">Synagogue</option>
+                        <option value="taxi_stand">Taxi_stand</option>
+                        <option value="train_station">Train_station</option>
+                        <option value="transit_station">Transit_station</option>
+                        <option value="travel_agency">Travel_agency</option>
+                        <option value="veterinary_care">Veterinary_care</option>
+                        <option value="zoo">Zoo</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label>City</label>
-            <input type="text" class="form-control" placeholder="City" name="city">
+
+        <div class="location">
+            {{#if errors}}
+                <div class="alert alert-danger">
+                    <p>
+                        Please give atleast one address field. 
+                    </p>
+                </div>
+            {{/if}}
+            <p>Address</p>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <input type="text" class="form-control" placeholder="Street Address" name="street">
+                </div>
+                <div class="col-md-3 form-group">
+                    <input type="text" class="form-control" placeholder="City" name="city">
+                </div>
+                <div class="col-md-3 form-group">
+                    <input type="text" class="form-control" placeholder="State" name="state">
+                </div>
+                <div class="col-md-3 form-group">
+                    <input type="text" class="form-control" placeholder="ZIP Code" name="zipcode">
+                </div>
+                <button type="submit" class="btn btn-default">
+                    Submit
+                </button>
+            </div>
         </div>
-        <div class="form-group">
-            <label>State</label>
-            <input type="text" class="form-control" placeholder="State" name="state">
-        </div>
-        <div class="form-group">
-            <label>ZIP Code</label>
-            <input type="text" class="form-control" placeholder="ZIP Code" name="zipcode">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        
     </form>
 </div>

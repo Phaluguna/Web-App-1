@@ -16,6 +16,7 @@ router.post('/' , function(req,res){
     var city = trim(req.body.city);
     var state = trim(req.body.state);
     var zip = trim(req.body.zipcode);
+    var businesstype = req.body.businesstype;
 
     if(city.length == 0 && state.length == 0 && zip.length == 0){
         res.render('search', {
@@ -37,6 +38,7 @@ router.post('/' , function(req,res){
         });
     }
 });
+
 
 function trim (myString){
     return myString.replace(/^\s+/,'').replace(/\s+$/,'');

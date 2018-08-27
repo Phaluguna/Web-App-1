@@ -9,26 +9,30 @@
 
     <title>Business Locator</title>
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
+    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="bgimg-1">
     <div class="container">
       <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/search">Search</a>
-            </li>
+        <nav class="navbar navbar-dark navbar-my-custom">
+          <a class="navbar-brand" href="/">Explorer</a>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Search</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Business Locator</h3>
       </div>
+
       {{{body}}}
+
+      <footer class="footer">
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+
+    </div>
   </body>
 </html>
