@@ -1,0 +1,18 @@
+{{#if error}}
+    <div class="alert alert-danger">
+        <p>
+            An has error occured. Please try again later.
+        </p>
+    </div>
+{{/if}}
+
+{{#if data}}
+    <div class="alert alert-danger">
+        <p>
+            {{data.result}}
+        </p>
+        {{#each data.result}}
+            <p>{{@index}}. {{this.name}}</p>
+        {{/each}}
+    </div>
+{{/if}}
